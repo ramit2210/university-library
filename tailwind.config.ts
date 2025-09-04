@@ -1,9 +1,5 @@
 import type { Config } from "tailwindcss";
 
-// This configuration is compatible with Tailwind CSS v4.
-// The structure for theme extension, colors, and plugins is the same.
-// The main difference in v4 is the build engine and how you import Tailwind in your CSS.
-
 export default {
   darkMode: ["class"],
   content: [
@@ -15,30 +11,28 @@ export default {
     extend: {
       fontFamily: {
         "ibm-plex-sans": ["IBM Plex Sans", "sans-serif"],
-        "bebas-neue": ["var(--bebas-neue)"],
+        "bebas-neue": ["Bebas Neue", "cursive"],
       },
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          // You had two 'primary' keys. They have been merged.
-          // The HSL version from shadcn/ui is commented out in favor of your custom one.
-          // DEFAULT: "hsl(var(--primary))",
-          // foreground: "hsl(var(--primary-foreground))",
-          DEFAULT: "#E7C9A5",
-          admin: "#25388C",
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+          admin: "#25388C",
+        }, // ✅ Comma here is critical
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
+        }, // ✅
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
@@ -47,14 +41,13 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
         chart: {
           "1": "hsl(var(--chart-1))",
           "2": "hsl(var(--chart-2))",
@@ -78,7 +71,7 @@ export default {
         blue: {
           100: "#0089F1",
         },
-        light: {
+        surface: {
           100: "#D6E0FF",
           200: "#EED1AC",
           300: "#F8F8FF",
@@ -88,7 +81,7 @@ export default {
           700: "#E2E8F0",
           800: "#F8FAFC",
         },
-        dark: {
+        elevated: {
           100: "#16191E",
           200: "#3A354E",
           300: "#232839",
@@ -102,16 +95,20 @@ export default {
           100: "#CBD5E1",
         },
       },
+      screens: {
+        xs: "480px",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      screens: {
-        xs: "480px",
-      },
       backgroundImage: {
         pattern: "url('/images/pattern.webp')",
+        "gradient-vertical":
+          "linear-gradient(180deg, #12141d 0%, #12151f 100%)",
+        "gradient-gray": "linear-gradient(270deg, #37363a 0%, #353637 100%)",
+        "gradient-blue": "linear-gradient(180deg, #232839 0%, #12141d 100%)",
       },
     },
   },
