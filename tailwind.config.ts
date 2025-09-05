@@ -11,7 +11,7 @@ export default {
     extend: {
       fontFamily: {
         "ibm-plex-sans": ["IBM Plex Sans", "sans-serif"],
-        "bebas-neue": ["Bebas Neue", "cursive"],
+        "bebas-neue": ["var(--bebas-neue)"],
       },
       colors: {
         background: "hsl(var(--background))",
@@ -24,15 +24,14 @@ export default {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-          admin: "#25388C",
-        }, // ✅ Comma here is critical
+        // primary: {
+        //   DEFAULT: "hsl(var(--primary))",
+        //   foreground: "hsl(var(--primary-foreground))",
+        // },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
-        }, // ✅
+        },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
@@ -55,6 +54,10 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        primary: {
+          DEFAULT: "#E7C9A5",
+          admin: "#25388C",
+        },
         green: {
           DEFAULT: "#027A48",
           100: "#ECFDF3",
@@ -71,7 +74,7 @@ export default {
         blue: {
           100: "#0089F1",
         },
-        surface: {
+        light: {
           100: "#D6E0FF",
           200: "#EED1AC",
           300: "#F8F8FF",
@@ -81,7 +84,7 @@ export default {
           700: "#E2E8F0",
           800: "#F8FAFC",
         },
-        elevated: {
+        dark: {
           100: "#16191E",
           200: "#3A354E",
           300: "#232839",
@@ -105,10 +108,6 @@ export default {
       },
       backgroundImage: {
         pattern: "url('/images/pattern.webp')",
-        "gradient-vertical":
-          "linear-gradient(180deg, #12141d 0%, #12151f 100%)",
-        "gradient-gray": "linear-gradient(270deg, #37363a 0%, #353637 100%)",
-        "gradient-blue": "linear-gradient(180deg, #232839 0%, #12141d 100%)",
       },
     },
   },
