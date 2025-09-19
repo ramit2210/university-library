@@ -1,7 +1,7 @@
 import React from "react";
 import BookCard from "./BookCard";
 
-type Props = {
+export type Props = {
     title: string;
     books: Book[];
     containerClassName?: string;
