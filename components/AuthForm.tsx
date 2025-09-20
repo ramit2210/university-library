@@ -28,7 +28,7 @@ import { useRouter } from "next/navigation";
 import ImageUpload from "./ImageUpload";
 
 interface Props<T extends FieldValues> {
-    schema: ZodType<T>;
+    schema: ZodType<T, any, any>;
     defaultValues: T;
     onSubmit: (data: T) => Promise<{ success: boolean; error?: string }>;
     type: "SIGN_IN" | "SIGN_UP";
@@ -44,7 +44,7 @@ const AuthForm = <T extends FieldValues>({
 
     const isSignIn = type === "SIGN_IN";
 
-    const form: UseFormReturn<T> = useForm({
+    const form = useForm({
         resolver: zodResolver(schema),
         defaultValues: defaultValues as DefaultValues<T>,
     });
